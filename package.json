@@ -12,6 +12,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "decompose": "git://github.com/seanchas116/decompose.git#master",
     "pluralize": "^1.1.0",
     "virtual-hyperscript": "^4.6.0",
     "xtend": "^4.0.0"
