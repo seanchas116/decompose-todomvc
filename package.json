@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "browserify -d -t coffeeify --extension .coffee ./src/index.coffee > ./bundle.js",
-    "watch": "watchify -d -t coffeeify --extension .coffee ./src/index.coffee -o ./bundle.js",
+    "watch": "watchify -d -t coffeeify --extension .coffee ./src/index.coffee -o ./bundle-debug.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
