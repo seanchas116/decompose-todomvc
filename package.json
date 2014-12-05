@@ -1,0 +1,24 @@
+{
+  "name": "decompose-todomvc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify -d -t coffeeify --extension .coffee ./src/index.coffee > ./bundle.js",
+    "watch": "watchify -d -t coffeeify --extension .coffee ./src/index.coffee -o ./bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "pluralize": "^1.1.0",
+    "virtual-hyperscript": "^4.6.0",
+    "xtend": "^4.0.0"
+  },
+  "devDependencies": {
+    "browserify": "^6.3.3",
+    "coffeeify": "^1.0.0",
+    "watchify": "^2.1.1"
+  }
+}
