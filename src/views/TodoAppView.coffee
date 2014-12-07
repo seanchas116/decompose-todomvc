@@ -31,10 +31,10 @@ class TodoAppView extends Component
   onUnmount: ->
     todoCollection.removeListener 'update', @udpateCallback
 
-  onKeyUp: (event) ->
+  onKeyDown: (event) ->
     if event.keyCode == 13
-      todoCollection.add new Todo(text: @newText, isCompleted: false)
-      @assign newText: ''
+      todoCollection.add new Todo(text: event.target.value, isCompleted: false)
+      event.target.value = ''
 
   onToggleAll: ->
     todoCollection.setCompletedAll(@allDone)
@@ -52,12 +52,11 @@ class TodoAppView extends Component
     h 'section#todoapp', [
       h 'header#header', [
         h 'h1', 'todos'
-        d value: [this, 'newText'],
-          h 'input#new-todo',
-            autofocus: true
-            autocomplete: 'off'
-            placeholder: 'What needs to be done?'
-            onkeyup: @onKeyUp.bind(this)
+        h 'input#new-todo',
+          autofocus: true
+          autocomplete: 'off'
+          placeholder: 'What needs to be done?'
+          onkeydown: @onKeyDown.bind(this)
       ]
       h 'section#main', [
         d value: [this, 'allDone'],
